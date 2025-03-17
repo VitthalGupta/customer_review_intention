@@ -52,15 +52,19 @@ class CustomerIntentionAgent:
             return None
 
     def post_process(self, text):
+        """Formats extracted attributes: removes newlines, numbers, and extra spaces."""
         try:
-            text_ = re.split(r"[\n,]+", text)
-            text_ = [attr.strip() for attr in text_ if attr.strip()]
-            text_ = [attr for attr in text_ if " " not in attr or "-" in attr]
-            return ", ".join(text_)
+            attributes = re.split(r"[\n,]+", text)
+            attributes = [
+                re.sub(r"^\d+\.\s*|-", "", attr).strip() for attr in attributes
+            ]
+            attributes = [attr for attr in attributes if attr]  # Remove empty strings
+
+            return ", ".join(attributes) if attributes else "Unknown"
 
         except Exception as e:
             logger.error(f"Error post-processing text: {e}")
-            return None
+            return "Unknown"
 
     def return_df(self, df, limit=10):
         try:
