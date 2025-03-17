@@ -57,7 +57,7 @@ def get_parser(available_models=None, modules=None):
             "--temperature",
             type=float,
             required=False,
-            default=0.6,
+            default=0.3,
             help="Temperature for the model",
         )
 
