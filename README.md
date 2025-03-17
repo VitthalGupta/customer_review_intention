@@ -61,7 +61,7 @@ python main.py --review_file input.json --output_file output.json --model gpt-4-
 
 ## Attribute Extraction Approach
 
-- **Predefined Attributes:** Uses a fixed set of delight attributes for extraction.
+- **Pre-processing:** Uses both title and body of the review for attribute extraction after cleaning.
 - **GPT Model:** Utilizes OpenAI's GPT models to generate attribute predictions.
 - **Post-processing:** Normalizes and deduplicates extracted attributes.
   
@@ -75,10 +75,9 @@ python main.py --review_file input.json --output_file output.json --model gpt-4-
 
 - Use embeddings from already classified reviews for better attribute classification and to reduce API usage.
 - Enhance semantic matching by incorporating additional NLP techniques such as TF-IDF similarity and BERT embeddings.
-- Add synonym handling to improve attribute extraction accuracy.
-- Create a documentation that extracts doctring as source.
+- Create a documentation that extracts doctring from code.
 
 ## Known Issues
 
-- The spelling of the words may be worng due to stemmer.
-- Need a fixed pool of attributes to map with the extracted attributes. That would have been possible, if we could have known the product for which the review is given. (ASUMPTION: The product is something related to cosmetics)
+- The spelling of the words may be wrong due to stemmer.
+- Need a fixed pool of attributes to map with the extracted attributes. That would have been possible, if we could have known the product for which the review is given. (**ASSUMPTION: The product is something related to cosmetics**)
