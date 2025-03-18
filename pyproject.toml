@@ -1,7 +1,7 @@
 [project]
-name = "customer-review-intention"
+name = "CRI-Customer_Review_Insights"
 version = "0.1.0"
-description = ""
+description = "This tool automates the process using NLP, ensuring consistency and efficiency in extracting key delight attributes."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -20,7 +20,11 @@ compile-bytecode = true
 dev-dependencies = [
     "black>=25.1.0",
     "coverage>=7.6.1",
+    "cri-customer-review-insights",
     "ipykernel>=6.29.5",
     "pytest>=8.3.4",
     "vulture>=2.13",
 ]
+
+[tool.uv.sources]
+cri-customer-review-insights = { workspace = true }

@@ -40,7 +40,23 @@ The project processes JSON files containing customer reviews. Each review consis
 ### Running the CLI Tool
 
 ```sh
-python main.py --review_file input.json --output_file output.json --model gpt-4-turbo --temperature 0.5 --max_tokens 20 --prompt v1 --limit 10
+uv run  src/cri/main.py --review_file input.json --output_file output.json --model gpt-4-turbo --temperature 0.5 --max_tokens 20 --prompt v1 --limit 10
+```
+
+OR
+
+The shorter version (with default values):
+
+```sh
+uv run src/cri/main.py --review_file input.json --output_file output.json
+```
+
+## Build Instructions
+
+To build the project as a module, run the following command:
+
+```sh
+uv build
 ```
 
 ### Output Formats
